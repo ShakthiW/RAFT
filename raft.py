@@ -76,7 +76,7 @@ def get_chunks(
             raise TypeError("Document is not one of the accepted types: api, pdf, json, txt")
         
         num_chunks = len(text) / chunk_size 
-        text_splitter = SemanticChunker(OpenAIEmbeddings(openai_api_key="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"), number_of_chunks=num_chunks)
+        text_splitter = SemanticChunker(OpenAIEmbeddings(openai_api_key=""), number_of_chunks=num_chunks)
         chunks = text_splitter.create_documents([text])
         chunks = [chunk.page_content for chunk in chunks]
             
