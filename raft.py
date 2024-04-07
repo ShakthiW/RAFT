@@ -13,7 +13,7 @@ from prompts import instruction_str, context
 
 DocType = Literal["api", "pdf", "json", "txt"]
 
-client = OpenAI(api_key = "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")
+client = OpenAI(api_key = "")
 
 def get_args() -> argparse.Namespace:
     """
@@ -28,7 +28,7 @@ def get_args() -> argparse.Namespace:
     parser.add_argument("--questions", type=int, default=5, help="The number of data points / triplets to generate per chunk")
     parser.add_argument("--chunk_size", type=int, default=512, help="The size of each chunk in number of tokens")
     parser.add_argument("--doctype", type=str, default="pdf", help="The type of the document, must be one of the accepted doctypes", choices=["pdf", "txt", "json", "api"])
-    parser.add_argument("--openai_key", type=str, default="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", help="Your OpenAI key used to make queries to GPT-3.5 or GPT-4")
+    parser.add_argument("--openai_key", type=str, default="", help="Your OpenAI key used to make queries to GPT-3.5 or GPT-4")
 
     args = parser.parse_args()
     return args
